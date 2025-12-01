@@ -66,6 +66,8 @@ The given database schema is available in the `sql/tables` directory.
 
 This will create 4 tables: Students, Supervisors, Projects, and Evaluations.
 
+![Entity Relationship Diagram](./assets/entity-relationship-diagram.png)
+
 ## Prerequisites
 
 - Docker or Podman installed on your machine.
