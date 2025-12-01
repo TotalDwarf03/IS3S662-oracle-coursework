@@ -39,11 +39,10 @@ Once the schema is established, you must:
 
 1. Identify three distinct operations or features that would benefit from PL/SQL logic (e.g. automated actions, validations, reuseable business logic).
 2. Implement each operation using an appropriate PL/SQL construct such as:
-
-- Stored Procedure
-- Function
-- Trigger
-- Package
+   - Stored Procedure
+   - Function
+   - Trigger
+   - Package
 
 **Note:** You may use the same type of construct more than once, provided each addresses a distinct operation.
 
