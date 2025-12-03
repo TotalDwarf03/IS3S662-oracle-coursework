@@ -17,11 +17,13 @@ Oracle PL/SQL coursework for Advanced Databases and Modelling (IS3S662) at the U
     - [Creating a Non-root User](#creating-a-non-root-user)
     - [Provisioning the Tables](#provisioning-the-tables)
     - [Inserting Sample Data](#inserting-sample-data)
+    - [Queries and Packages](#queries-and-packages)
   - [Stopping, Restarting and Removing the Container](#stopping-restarting-and-removing-the-container)
   - [Linting and Formatting](#linting-and-formatting)
     - [SQLFluff](#sqlfluff)
       - [Permission Issues](#permission-issues)
     - [Markdownlint-cli](#markdownlint-cli)
+    - [Aliasing](#aliasing)
     - [GitHub Actions](#github-actions)
   - [Credits, References and Acknowledgements](#credits-references-and-acknowledgements)
 
@@ -170,6 +172,14 @@ Sample data insertion scripts are provided in the `sql/sample-data` directory.
 
 Run each of the SQL scripts in that directory while connected as the `appuser` user to populate the tables with sample data.
 
+### Queries and Packages
+
+The additional functionality the coursework requires can be implemented in the `sql/packages` directory.
+
+Within the directory, you will find 3 separate subdirectories containing SQL scripts for each PL/SQL package, procedure, function or trigger that you need to implement, alongside a `README.md` file with information about the package.
+
+[Explore the `sql/packages` directory for more details.](./sql/packages)
+
 ## Stopping, Restarting and Removing the Container
 
 To stop the container, run:
@@ -243,6 +253,22 @@ docker run -v $PWD:/workdir ghcr.io/igorshubovych/markdownlint-cli:latest "**/*.
 ```
 
 This makes use of the latest markdownlint-cli Docker image from GitHub Container Registry.
+
+### Aliasing
+
+I'd recommend adding aliases to your shell configuration file (e.g. `.bashrc` or `.zshrc`) for easier use of these commands.
+
+```bash
+# ~/.bashrc
+
+# Markdownlint-cli
+alias mdlint="docker run -v $PWD:/workdir ghcr.io/igorshubovych/markdownlint-cli:latest '**/*.md'"
+alias mdfix="docker run -v $PWD:/workdir ghcr.io/igorshubovych/markdownlint-cli:latest '**/*.md' --fix"
+
+# SQLFluff
+alias sqllint="docker run -it --rm -v $PWD:/sql ghcr.io/sqlfluff/sqlfluff:latest lint ."
+alias sqlfix="docker run -it --rm -v $PWD:/sql ghcr.io/sqlfluff/sqlfluff:latest fix ."
+```
 
 ### GitHub Actions
 
