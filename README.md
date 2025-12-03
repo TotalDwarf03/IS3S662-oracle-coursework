@@ -13,6 +13,7 @@ Oracle PL/SQL coursework for Advanced Databases and Modelling (IS3S662) at the U
   - [Prerequisites](#prerequisites)
   - [Running the Oracle Database Container](#running-the-oracle-database-container)
   - [Connecting to the Database](#connecting-to-the-database)
+  - [Setting Up the Database](#setting-up-the-database)
   - [Stopping, Restarting and Removing the Container](#stopping-restarting-and-removing-the-container)
   - [Linting and Formatting](#linting-and-formatting)
     - [SQLFluff](#sqlfluff)
@@ -114,6 +115,19 @@ See the below screenshot for reference:
 ![SQL Developer Connection Screenshot](./assets/sqldeveloper-connection.png)
 
 Once connected, you can run SQL and PL/SQL code against the Oracle database.
+
+## Setting Up the Database
+
+After connecting to the database for the first time, you will need to create a new user/schema for the coursework.
+
+This is because the default SYS user is a privileged administrative user and it is best practice to avoid using it for application development.
+Additionally, there are lots of system tables which may clutter your view.
+
+To create a new user, a SQL script is provided in [`sql/user-setup/user.sql`](./sql/user-setup/user.sql).
+
+This will create a new user called `appuser` with password `password` and grant it administrative privileges.
+
+This will allow you to do anything with the database, without needing to use the SYS user or see the system tables.
 
 ## Stopping, Restarting and Removing the Container
 

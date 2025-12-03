@@ -1,0 +1,6 @@
+CREATE USER appuser
+IDENTIFIED BY password;
+
+GRANT CONNECT TO appuser;
+
+GRANT ALL PRIVILEGES TO appuser IDENTIFIED BY password;
