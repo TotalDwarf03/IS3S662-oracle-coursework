@@ -20,6 +20,7 @@ Oracle PL/SQL coursework for Advanced Databases and Modelling (IS3S662) at the U
       - [Permission Issues](#permission-issues)
     - [Markdownlint-cli](#markdownlint-cli)
     - [GitHub Actions](#github-actions)
+  - [Credits, References and Acknowledgements](#credits-references-and-acknowledgements)
 
 ## Coursework Overview
 
@@ -206,3 +207,10 @@ This makes use of the latest markdownlint-cli Docker image from GitHub Container
 ### GitHub Actions
 
 All of the above linting and formatting checks are also run automatically via GitHub Actions on each push and pull request to the repository.
+
+## Credits, References and Acknowledgements
+
+- [Oracle Database Container Image by gvenzl](https://github.com/gvenzl/oci-oracle-free)
+- [SQL Developer VS Code Extension](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer)
+- [Markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
+- [SQLFluff](https://github.com/sqlfluff/sqlfluff)
