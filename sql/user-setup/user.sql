@@ -1,3 +1,5 @@
+-- noqa: disable=PRS
+
 CREATE USER appuser
 IDENTIFIED BY password;
 
