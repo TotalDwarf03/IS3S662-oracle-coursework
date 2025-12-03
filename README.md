@@ -14,6 +14,9 @@ Oracle PL/SQL coursework for Advanced Databases and Modelling (IS3S662) at the U
   - [Running the Oracle Database Container](#running-the-oracle-database-container)
   - [Connecting to the Database](#connecting-to-the-database)
   - [Setting Up the Database](#setting-up-the-database)
+    - [Creating a Non-root User](#creating-a-non-root-user)
+    - [Provisioning the Tables](#provisioning-the-tables)
+    - [Inserting Sample Data](#inserting-sample-data)
   - [Stopping, Restarting and Removing the Container](#stopping-restarting-and-removing-the-container)
   - [Linting and Formatting](#linting-and-formatting)
     - [SQLFluff](#sqlfluff)
@@ -119,6 +122,8 @@ Once connected, you can run SQL and PL/SQL code against the Oracle database.
 
 ## Setting Up the Database
 
+### Creating a Non-root User
+
 After connecting to the database for the first time, you will need to create a new user/schema for the coursework.
 
 This is because the default SYS user is a privileged administrative user and it is best practice to avoid using it for application development.
@@ -129,6 +134,41 @@ To create a new user, a SQL script is provided in [`sql/user-setup/user.sql`](./
 This will create a new user called `appuser` with password `password` and grant it administrative privileges.
 
 This will allow you to do anything with the database, without needing to use the SYS user or see the system tables.
+
+Once the user is created, disconnect from the SYS user and create a new connection in SQL Developer using the following details:
+
+```plaintext
+Authentication Type: Default
+Role: Default
+Username: appuser
+Password: password
+
+Hostname: localhost
+Port: 1521
+Type: Service Name
+Service Name: FREEPDB1
+```
+
+This user should now be used for all further development work on the coursework.
+
+### Provisioning the Tables
+
+All table definitions are provided in the `sql/tables` directory.
+
+Simply run each of the SQL scripts in that directory while connected as the `appuser` user to create the necessary tables for the coursework.
+
+This should be done in the following order to satisfy foreign key constraints:
+
+1. `students.sql`
+2. `supervisors.sql`
+3. `projects.sql`
+4. `evaluations.sql`
+
+### Inserting Sample Data
+
+Sample data insertion scripts are provided in the `sql/sample-data` directory.
+
+Run each of the SQL scripts in that directory while connected as the `appuser` user to populate the tables with sample data.
 
 ## Stopping, Restarting and Removing the Container
 
