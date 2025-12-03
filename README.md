@@ -13,7 +13,7 @@ Oracle PL/SQL coursework for Advanced Databases and Modelling (IS3S662) at the U
   - [Prerequisites](#prerequisites)
   - [Running the Oracle Database Container](#running-the-oracle-database-container)
   - [Connecting to the Database](#connecting-to-the-database)
-  - [Stopping and Restarting the Container](#stopping-and-restarting-the-container)
+  - [Stopping, Restarting and Removing the Container](#stopping-restarting-and-removing-the-container)
   - [Linting and Formatting](#linting-and-formatting)
     - [SQLFluff](#sqlfluff)
       - [Permission Issues](#permission-issues)
@@ -115,7 +115,7 @@ See the below screenshot for reference:
 
 Once connected, you can run SQL and PL/SQL code against the Oracle database.
 
-## Stopping and Restarting the Container
+## Stopping, Restarting and Removing the Container
 
 To stop the container, run:
 
@@ -132,6 +132,12 @@ docker restart oracledb
 **Note:** Stopping the container will persist the database state, so your data will remain intact when you restart it.
 
 Only removing the container will delete the database data.
+
+To remove the container, run:
+
+```bash
+docker rm oracledb
+```
 
 ## Linting and Formatting
 
