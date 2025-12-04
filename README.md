@@ -26,6 +26,7 @@ Oracle PL/SQL coursework for Advanced Databases and Modelling (IS3S662) at the U
     - [Aliasing](#aliasing)
     - [GitHub Actions](#github-actions)
   - [Credits, References and Acknowledgements](#credits-references-and-acknowledgements)
+  - [Additional Notes](#additional-notes)
 
 ## Coursework Overview
 
@@ -280,3 +281,7 @@ All of the above linting and formatting checks are also run automatically via Gi
 - [SQL Developer VS Code Extension](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer)
 - [Markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
 - [SQLFluff](https://github.com/sqlfluff/sqlfluff)
+
+## Additional Notes
+
+- Good Oracle PL/SQL tutorial: [TutorialsPoint Oracle PL/SQL](https://www.tutorialspoint.com/plsql/index.htm)
