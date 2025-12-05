@@ -27,4 +27,4 @@ values (13, 48, 10, 'A', 'Outstanding genetics analysis.', DATE '2025-09-30');
 insert into Evaluations (Evaluationid, Projectid, Supervisorid, Grade, Comments, Evaluationdate)
 values (14, 56, 9, 'C', 'Solid financial risk assessment.', DATE '2025-09-25');
 
-COMMIT;
+commit;
