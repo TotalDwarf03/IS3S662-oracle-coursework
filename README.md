@@ -180,6 +180,8 @@ This should be done in the following order to satisfy foreign key constraints:
 3. `projects.sql`
 4. `evaluations.sql`
 
+Should these tables need to be reset/dropped, a script is provided in `sql/tables/delete-tables.sql` to drop all tables in the correct order.
+
 ### Queries and Packages
 
 The additional functionality the coursework requires can be implemented in the `sql/packages` directory.
