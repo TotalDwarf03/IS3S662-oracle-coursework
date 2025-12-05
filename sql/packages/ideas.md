@@ -69,7 +69,7 @@ Additionally, I can create Views and Indexes as smaller separate components / it
 - Function to get grade based on passed mark (CASE)
 - Function to calculate pass/fail (IF..ELSE)
 - Procedure to get student's average mark across all projects (Implicit Cursor, LOOP)
-- Get list of projects supervised by a supervisor (Explicit Cursor, Cursor Records, FOR LOOP)
+- Get list of projects supervised by a supervisor for a status (Explicit Cursor, Cursor Records, FOR LOOP)
 - Exception handling for invalid project IDs, invalid marks, etc.
 - Procedure to remark a project (Using Parameters, Transactions, SAVEPOINT)
 - Procedure to view projects ready for marking
@@ -79,7 +79,7 @@ Additionally, I can create Views and Indexes as smaller separate components / it
 
 #### Package 2 - Student Package
 
-- Procedure to get projects by status
+- Procedure to get projects by status for a student
 - Procedure to get project and performance summary (i.e. Average mark, grade, number of projects passed/failed, number of projects pending)
 - Function to calculate overall grade across all projects (Implicit Cursor, LOOP)
 - Procedure to submit a project (Using Parameters, Transactions)
@@ -131,8 +131,7 @@ Create a view to extend project information with marking, student and supervisor
 
 #### Indexes
 
-- Index on project table to speed up lookups by student ID.
-- Index on evaluation table to speed up lookups by supervisor ID.
+- Index on project table to speed up lookups by student ID and status.
+- Index on project table to speed up lookups by supervisor ID and status.
 - Index on notification table to speed up lookups by student ID and notification status (read/unread).
 - Index on notification table to speed up lookups by staff ID and notification status (read/unread).
-- Index on project status to speed up lookups by project status (pending, completed, etc.).
