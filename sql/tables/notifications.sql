@@ -1,0 +1,6 @@
+CREATE TABLE Notifications (
+    Notificationid VARCHAR2(5) PRIMARY KEY NOT NULL,
+    Personid NUMBER NOT NULL,
+    Message CLOB NOT NULL,
+    Createdat TIMESTAMP DEFAULT SYSTIMESTAMP
+);

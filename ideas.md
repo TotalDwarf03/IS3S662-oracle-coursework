@@ -133,5 +133,4 @@ Create a view to extend project information with marking, student and supervisor
 
 - Index on project table to speed up lookups by student ID and status.
 - Index on project table to speed up lookups by supervisor ID and status.
-- Index on notification table to speed up lookups by student ID and notification status (read/unread).
-- Index on notification table to speed up lookups by staff ID and notification status (read/unread).
+- Index on notification table to speed up lookups by person ID (StudentID if student, SupervisorID if supervisor) and notification status (read/unread).

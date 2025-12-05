@@ -1,38 +1,38 @@
-CREATE OR REPLACE VIEW ProjectView AS
+CREATE OR REPLACE VIEW PROJECTVIEW AS
 SELECT
     -- Project Details
-    p.ProjectID,
-    p.Title AS ProjectTitle,
-    p.Description AS ProjectDescription,
-    p.StartDate AS ProjectStartDate,
-    p.Status AS ProjectStatus,
+    P.PROJECTID,
+    P.TITLE AS PROJECTTITLE,
+    P.DESCRIPTION AS PROJECTDESCRIPTION,
+    P.STARTDATE AS PROJECTSTARTDATE,
+    P.STATUS AS PROJECTSTATUS,
     -- Student Details
-    s.StudentID,
-    s.FullName AS StudentFullName,
-    s.Email AS StudentEmail,
+    S.STUDENTID,
+    S.FULLNAME AS STUDENTFULLNAME,
+    S.EMAIL AS STUDENTEMAIL,
     -- Supervisor Details (for the project)
-    sup.SupervisorID,
-    sup.FullName AS SupervisorFullName,
-    sup.Email AS SupervisorEmail,
-    sup.Department AS SupervisorDepartment,
+    SUP.SUPERVISORID,
+    SUP.FULLNAME AS SUPERVISORFULLNAME,
+    SUP.EMAIL AS SUPERVISOREMAIL,
+    SUP.DEPARTMENT AS SUPERVISORDEPARTMENT,
     -- Boolean indicating if the project has been evaluated or not
-    CASE
-        WHEN e.ProjectID IS NOT NULL THEN 'Yes'
-        ELSE 'No'
-    END AS IsEvaluated,
+    E.GRADE AS PROJECTGRADE,
     -- Evaluation Details (if evaluated, else NULL)
-    e.grade AS ProjectGrade,
-    e.comments AS ProjectFeedback,
+    E.COMMENTS AS PROJECTFEEDBACK,
+    MRK.SUPERVISORID AS MARKEDBYSUPERVISORID,
     -- Supervisor Details (person who marked the project)
-    mrk.SupervisorID AS MarkedBySupervisorID,
-    mrk.FullName AS MarkedBySupervisorFullName,
-    mrk.Email AS MarkedBySupervisorEmail
+    MRK.FULLNAME AS MARKEDBYSUPERVISORFULLNAME,
+    MRK.EMAIL AS MARKEDBYSUPERVISOREMAIL,
+    CASE
+        WHEN E.PROJECTID IS NOT NULL THEN 'Yes'
+        ELSE 'No'
+    END AS ISEVALUATED
 FROM
-    Projects p
-JOIN Students s ON p.StudentID = s.StudentID
-JOIN Supervisors sup ON p.SupervisorID = sup.SupervisorID
+    PROJECTS P
+INNER JOIN STUDENTS S ON P.STUDENTID = S.STUDENTID
+INNER JOIN SUPERVISORS SUP ON P.SUPERVISORID = SUP.SUPERVISORID
 -- Must be a left join since some projects may not have been evaluated yet
-LEFT JOIN Evaluations e ON p.ProjectID = e.ProjectID
-LEFT JOIN Supervisors mrk ON e.SupervisorID = mrk.SupervisorID;
+LEFT JOIN EVALUATIONS E ON P.PROJECTID = E.PROJECTID
+LEFT JOIN SUPERVISORS MRK ON E.SUPERVISORID = MRK.SUPERVISORID;
 
 COMMIT;
