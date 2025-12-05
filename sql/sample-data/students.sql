@@ -8,3 +8,5 @@ insert into Students (Studentid, Fullname, Email) values (7, 'Nicoli Pirouet', '
 insert into Students (Studentid, Fullname, Email) values (8, 'Joly Budgey', 'jbudgey7@chicagotribune.com');
 insert into Students (Studentid, Fullname, Email) values (9, 'Alidia Boness', 'aboness8@telegraph.co.uk');
 insert into Students (Studentid, Fullname, Email) values (10, 'Carmen Streatfield', 'cstreatfield9@geocities.com');
+
+COMMIT;

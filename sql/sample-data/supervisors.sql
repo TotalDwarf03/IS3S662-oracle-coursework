@@ -8,3 +8,5 @@ insert into Supervisors (Supervisorid, Fullname, Email, Department) values (7, '
 insert into Supervisors (Supervisorid, Fullname, Email, Department) values (8, 'Merv Charrisson', 'mcharrisson7@de.vu', 'Psychology');
 insert into Supervisors (Supervisorid, Fullname, Email, Department) values (9, 'Basil Clutterbuck', 'bclutterbuck8@wired.com', 'Business');
 insert into Supervisors (Supervisorid, Fullname, Email, Department) values (10, 'Gussy Anderton', 'ganderton9@google.com', 'Biology');
+
+COMMIT;

@@ -138,3 +138,5 @@ values (60, 'Market Expansion Study', 'Researching strategies for expanding into
 
 -- Carmen Streatfield (Student 10) - 0 projects
 -- No projects assigned
+
+COMMIT;
