@@ -173,6 +173,13 @@ Sample data insertion scripts are provided in the `sql/sample-data` directory.
 
 Run each of the SQL scripts in that directory while connected as the `appuser` user to populate the tables with sample data.
 
+This should be done in the following order to satisfy foreign key constraints:
+
+1. `students.sql`
+2. `supervisors.sql`
+3. `projects.sql`
+4. `evaluations.sql`
+
 ### Queries and Packages
 
 The additional functionality the coursework requires can be implemented in the `sql/packages` directory.
