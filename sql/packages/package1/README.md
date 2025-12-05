@@ -1,15 +1,9 @@
-# Package 1 - Marking Package
+# Package 1 - NAME
 
 ## Overview
 
-This package contains a suite of database functionality to allow supervisors to track, manage and mark projects effectively.
+<!-- Brief description of what this package does + scope. -->
 
-It includes the following features:
+## Components
 
-- Stored Procedure to mark projects.
-- Stored Procedure to retrieve all marked projects for a supervisor.
-- Function to calculate grade based on marks.
-- Function to calculate pass/fail status based on grade.
-- Trigger to log email notifications when a project is marked.
-- Trigger to log if a resit is needed based on pass/fail status.
-- View to summarise project information - along with student, supervisor and marking details.
+<!-- List and briefly describe the procedures, functions, types, variables, cursors, exceptions, etc. that are part of this package. -->
