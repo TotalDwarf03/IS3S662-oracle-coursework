@@ -116,12 +116,12 @@ I could use a collection here to define different email templates for each type 
 
 For example
 
-| Type | Subject | Body | Audience |
-|------|---------|------|----------|
-| ps   | Project Passed | Congratulations, you have passed... | Student |
-| fs   | Project Failed | Unfortunately, you have not passed... | Student |
-| rs   | Project Remarked | Your project has been remarked... | Student |
-| rc   | Evaluation Receipt | An evaluation has been recorded... | Staff |
+| Type | Subject            | Body                                   | Audience |
+|------|--------------------|----------------------------------------|----------|
+| ps   | Project Passed     | Congratulations, you have passed...    | Student  |
+| fs   | Project Failed     | Unfortunately, you have not passed...  | Student  |
+| rs   | Project Remarked   | Your project has been remarked...      | Student  |
+| rc   | Evaluation Receipt | An evaluation has been recorded...     | Staff    |
 
 ### Additional Items
 
