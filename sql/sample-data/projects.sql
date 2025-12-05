@@ -1,4 +1,4 @@
--- Karoline Ourtic (Student 1) - 7 projects
+-- Charlotte Smith (Student 1) - 7 projects
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (1, 'Business Analytics Platform', 'Developing a platform for business data analysis and visualization.', 1, 1, NULL, 'Proposed');
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
@@ -14,7 +14,7 @@ VALUES (6, 'Business Ethics Review', 'Reviewing ethical practices in modern busi
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (7, 'International Business Law', 'Exploring international business law and its impact.', 1, 1, DATE '2025-11-01', 'In Progress');
 
--- Davidde Beade (Student 2) - 5 projects
+-- Oliver Brown (Student 2) - 5 projects
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (8, 'Bridge Structural Analysis', 'Analyzing the structural integrity of modern bridges.', 2, 2, DATE '2025-08-20', 'In Progress');
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
@@ -26,7 +26,7 @@ VALUES (11, 'Smart Grid Technology', 'Exploring smart grid technology for effici
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (12, 'Civil Engineering Innovations', 'Researching new materials in civil engineering.', 2, 2, DATE '2025-10-15', 'Completed');
 
--- Kyla Brozek (Student 3) - 8 projects
+-- Amelia Clarke (Student 3) - 8 projects
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (13, 'AI Chatbot Development', 'Building a chatbot using advanced AI techniques.', 3, 3, DATE '2025-09-10', 'Completed');
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
@@ -44,7 +44,7 @@ VALUES (19, 'Machine Learning for Healthcare', 'Applying machine learning to hea
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (20, 'Mobile App Development', 'Developing mobile applications for education.', 3, 7, NULL, 'Proposed');
 
--- Kaila Proske (Student 4) - 6 projects
+-- Harry Evans (Student 4) - 6 projects
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (21, 'Medieval Trade Routes', 'Studying the development of medieval trade routes in Europe.', 4, 4, NULL, 'Proposed');
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
@@ -58,7 +58,7 @@ VALUES (25, 'World War II Analysis', 'Analyzing the causes and effects of World 
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (26, 'Cultural Heritage Preservation', 'Researching methods for preserving cultural heritage.', 4, 5, NULL, 'Proposed');
 
--- Teador Salvadori (Student 5) - 7 projects
+-- George Taylor (Student 5) - 7 projects
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (27, 'Modern Art Movements', 'Exploring the evolution of modern art movements.', 5, 6, DATE '2025-09-12', 'In Progress');
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
@@ -74,7 +74,7 @@ VALUES (32, 'History of Painting', 'Studying the history and evolution of painti
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (33, 'Performance Art', 'Researching the impact of performance art.', 5, 6, DATE '2025-11-15', 'Completed');
 
--- Dev Spall (Student 6) - 8 projects
+-- Emily Wilson (Student 6) - 8 projects
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (34, 'Cognitive Behavioral Study', 'Investigating cognitive behavioral patterns in adolescents.', 6, 8, NULL, 'Proposed');
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
@@ -92,7 +92,7 @@ VALUES (40, 'Behavioral Genetics', 'Exploring the genetic basis of behavior.', 6
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (41, 'Social Psychology', 'Studying group dynamics and social behavior.', 6, 8, NULL, 'Proposed');
 
--- Nicoli Pirouet (Student 7) - 6 projects
+-- Jack Thompson (Student 7) - 6 projects
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (42, 'Machine Learning for Healthcare', 'Applying machine learning to healthcare diagnostics.', 7, 3, DATE '2025-09-22', 'In Progress');
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
@@ -106,7 +106,7 @@ VALUES (46, 'Computer Vision', 'Studying computer vision algorithms.', 7, 3, DAT
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (47, 'Data Science in Education', 'Applying data science to educational outcomes.', 7, 7, NULL, 'Proposed');
 
--- Joly Budgey (Student 8) - 7 projects
+-- Sophie Davies (Student 8) - 7 projects
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (48, 'Genetic Mutation Analysis', 'Analyzing genetic mutations in plant species.', 8, 10, DATE '2025-09-30', 'Completed');
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
@@ -122,7 +122,7 @@ VALUES (53, 'Zoology Research', 'Researching animal behavior and habitats.', 8, 
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (54, 'Biochemistry Applications', 'Studying applications of biochemistry in medicine.', 8, 10, DATE '2025-11-15', 'Completed');
 
--- Alidia Boness (Student 9) - 6 projects
+-- Freddie Harris (Student 9) - 6 projects
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (55, 'Business Ethics Review', 'Reviewing ethical practices in modern business.', 9, 1, NULL, 'Proposed');
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
@@ -136,7 +136,7 @@ VALUES (59, 'Business Analytics Platform', 'Developing a platform for business d
 INSERT INTO Projects (Projectid, Title, Description, Studentid, Supervisorid, Startdate, Status)
 VALUES (60, 'Market Expansion Study', 'Researching strategies for expanding into new business markets.', 9, 9, NULL, 'Proposed');
 
--- Carmen Streatfield (Student 10) - 0 projects
+-- Isla Robinson (Student 10) - 0 projects
 -- No projects assigned
 
 COMMIT;
