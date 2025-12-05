@@ -1,0 +1,10 @@
+insert into Supervisors (Supervisorid, Fullname, Email, Department) values (1, 'Gregg Marley', 'gmarley0@go.com', 'Business');
+insert into Supervisors (Supervisorid, Fullname, Email, Department) values (2, 'Alexia MacAnellye', 'amacanellye1@merriam-webster.com', 'Engineering');
+insert into Supervisors (Supervisorid, Fullname, Email, Department) values (3, 'Rasia Kabisch', 'rkabisch2@seesaa.net', 'Computer Science');
+insert into Supervisors (Supervisorid, Fullname, Email, Department) values (4, 'Constancia Treherne', 'ctreherne3@baidu.com', 'History');
+insert into Supervisors (Supervisorid, Fullname, Email, Department) values (5, 'Obediah Fuggles', 'ofuggles4@dailymotion.com', 'History');
+insert into Supervisors (Supervisorid, Fullname, Email, Department) values (6, 'Babb Vamplers', 'bvamplers5@bandcamp.com', 'Art');
+insert into Supervisors (Supervisorid, Fullname, Email, Department) values (7, 'Emlyn Lowne', 'elowne6@homestead.com', 'Computer Science');
+insert into Supervisors (Supervisorid, Fullname, Email, Department) values (8, 'Merv Charrisson', 'mcharrisson7@de.vu', 'Psychology');
+insert into Supervisors (Supervisorid, Fullname, Email, Department) values (9, 'Basil Clutterbuck', 'bclutterbuck8@wired.com', 'Business');
+insert into Supervisors (Supervisorid, Fullname, Email, Department) values (10, 'Gussy Anderton', 'ganderton9@google.com', 'Biology');
