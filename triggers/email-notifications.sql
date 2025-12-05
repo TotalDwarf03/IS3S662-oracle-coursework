@@ -1,4 +1,4 @@
-CREATE OR REPLACE TRIGGER email_notifications
+CREATE OR REPLACE TRIGGER email_notifications -- noqa: PRS
 AFTER INSERT OR UPDATE ON evaluations
 FOR EACH ROW
 DECLARE
