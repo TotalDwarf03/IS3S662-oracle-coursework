@@ -20,39 +20,45 @@ To get good marks, 2 packages and 1 trigger are needed.
 
 Across the 3 items, the following Oracle features should be used:
 
-- Variables
-- %Type
-- Operators
+*The following features are checked if I think they are included in the code.*
+
+- [x] Variables
+- [x] %Type
+- [x] %RowType
+- [x] Operators
 - Conditional Statements
-  - IF..ELSE
-  - CASE
+  - [x] IF..ELSE
+  - [x] CASE
 - Loops
-  - Basic LOOP
-  - FOR LOOP
-  - WHILE LOOP
-  - Nested Loops
-- String operations (maybe)
-- Arrays
-- Procedures
-- Functions
+  - [x] Basic LOOP
+  - [x] FOR LOOP
+  - [x] WHILE LOOP
+  - [ ] Nested Loops
+- [x] String operations (maybe)
+- [x] Arrays
+- [x] Procedures
+- [x] Functions
 - Cursors
-  - Implicit Cursors
-  - Explicit Cursors
+  - [x] Implicit Cursors
+  - [x] Explicit Cursors
 - Records
-  - Table Records
-  - Cursor Records
-  - User-Defined Records
+  - [x] Table Records
+  - [x] Cursor Records
+  - [x] User-Defined Records
 - Exception Handling
-  - System-defined Exceptions
-  - User-defined Exceptions
-- Triggers
-- Packages
+  - [x] System-defined Exceptions
+  - [x] User-defined Exceptions
+- [x] Triggers
+- [x] Packages
 - Collections (maybe)
-- Transactions
-  - Be good to demonstrate COMMIT, ROLLBACK, SAVEPOINT
-- Printing output using DBMS_OUTPUT.PUT_LINE
-- Object oriented PL/SQL features
-- Dynamic SQL (if possible)
+  - [x] Index-by Tables
+  - [x] Nested Tables
+  - [x] Varrays
+- [x] Transactions
+  - *Be good to demonstrate COMMIT, ROLLBACK, SAVEPOINT*
+- [x] Printing output using DBMS_OUTPUT.PUT_LINE
+- [x] Object oriented PL/SQL features
+- [x] Dynamic SQL (if possible)
 
 Additionally, I can create Views and Indexes as smaller separate components / items to show further understanding. For example:
 
@@ -69,9 +75,13 @@ Additionally, I can create Views and Indexes as smaller separate components / it
 - Function to get grade based on passed mark (CASE)
 - Function to calculate pass/fail (IF..ELSE)
 - Procedure to get student's average mark across all projects (Implicit Cursor, LOOP)
+  - This will be replaced by a produce student report procedure.
+  - This will make use of dynamic SQL to build a table name based on student ID.
+  - It will output the average mark.
+  - It will also include a summary of the student's performance (e.g. number of projects passed/failed).
 - Get list of projects supervised by a supervisor for a status (Explicit Cursor, Cursor Records, FOR LOOP)
 - Exception handling for invalid project IDs, invalid marks, etc.
-- Procedure to remark a project (Using Parameters, Transactions, SAVEPOINT)
+- Procedure to remark a project (Using Parameters, Explicit Cursor)
 - Procedure to view projects ready for marking
 - Procedure to get notifications for a supervisor
   - Procedure to acknowledge receipt of evaluation requests (Set that notification as read)

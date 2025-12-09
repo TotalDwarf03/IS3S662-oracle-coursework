@@ -3,7 +3,7 @@ CREATE TABLE Notifications (
     Personid NUMBER NOT NULL,
     Message CLOB NOT NULL,
     Createdat TIMESTAMP DEFAULT SYSTIMESTAMP,
-    Isread BOOLEAN DEFAULT FALSE
+    Isread NUMBER(1) DEFAULT 0
 );
 
 COMMENT ON TABLE Notifications IS 'Table to store notifications sent to students and supervisors regarding project evaluations.';

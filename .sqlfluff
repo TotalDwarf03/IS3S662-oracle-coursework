@@ -1,4 +1,4 @@
 [sqlfluff]
 dialect = oracle
-exclude_rules = LT05
+exclude_rules = LT05, ST12
 large_file_skip_byte_limit = 25000

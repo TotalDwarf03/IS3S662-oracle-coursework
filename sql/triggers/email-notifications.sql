@@ -11,12 +11,12 @@ DECLARE
     TYPE fail_grades_array IS VARRAY(2) OF CHAR(1);
 
     -- instantiate the arrays with the respective grades (these are constants)
-    pass_grades PASS_GRADES_ARRAY := pass_grades_array('A', 'B', 'C');
-    fail_grades FAIL_GRADES_ARRAY := fail_grades_array('D', 'F');
+    pass_grades CONSTANT PASS_GRADES_ARRAY := pass_grades_array('A', 'B', 'C');
+    fail_grades CONSTANT FAIL_GRADES_ARRAY := fail_grades_array('D', 'F');
 
     -- make constants to hold array lengths
-    pass_grade_len NUMBER := pass_grades.count;
-    fail_grade_len NUMBER := fail_grades.count;
+    pass_grade_len CONSTANT NUMBER := pass_grades.count;
+    fail_grade_len CONSTANT NUMBER := fail_grades.count;
 
     project_result VARCHAR2(4);
     message_type VARCHAR2(2);
