@@ -228,6 +228,30 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE(sqlerrm); -- Expected: Invalid mark.
 END;
 
+-- f. Data integrity error (multiple evaluations)
+
+BEGIN
+    -- Create duplicate evaluations for testing
+    INSERT INTO evaluations (evaluationid, projectid, supervisorid, grade, comments) VALUES (80, 3, 1, 'A', 'Initial evaluation');
+    INSERT INTO evaluations (evaluationid, projectid, supervisorid, grade, comments) VALUES (81, 3, 1, 'B', 'Duplicate evaluation');
+    COMMIT;
+
+    supervisor.remark_project(
+        project_id => 3,
+        new_mark => 90,
+        supervisor_id => 1,
+        comments => 'Re-evaluated, improved performance'
+    );
+    DBMS_OUTPUT.PUT_LINE('ProjectID 3 remarked successfully.');
+    EXCEPTION
+    WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE(sqlerrm); -- Expected: Data integrity error.
+    -- Clean up duplicate evaluations
+    DELETE FROM evaluations
+    WHERE evaluationid IN (80, 81);
+    COMMIT;
+END;
+
 -- 6. view_project_ready_for_evaluation tests
 
 -- a. Valid subject with projects

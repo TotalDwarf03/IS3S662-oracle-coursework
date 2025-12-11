@@ -270,6 +270,7 @@ CREATE OR REPLACE PACKAGE BODY supervisor AS -- noqa: PRS
     -- Rolls back if update fails
     PROCEDURE remark_project(project_id IN NUMBER, new_mark IN NUMBER, supervisor_id IN NUMBER, comments IN VARCHAR2) IS
     evaluation_not_found EXCEPTION;
+    evaluation_integrity_error EXCEPTION;
     BEGIN
         -- Make a savepoint before update
         SAVEPOINT before_remark;
@@ -283,6 +284,9 @@ CREATE OR REPLACE PACKAGE BODY supervisor AS -- noqa: PRS
         IF SQL%NOTFOUND THEN
             ROLLBACK TO before_remark;
             RAISE evaluation_not_found;
+        ELSIF SQL%ROWCOUNT > 1 THEN
+            ROLLBACK TO before_remark;
+            RAISE evaluation_integrity_error;
         ELSE
             COMMIT;
             DBMS_OUTPUT.PUT_LINE('Project remarked successfully.');
@@ -291,6 +295,8 @@ CREATE OR REPLACE PACKAGE BODY supervisor AS -- noqa: PRS
     EXCEPTION
         WHEN evaluation_not_found THEN
             RAISE_APPLICATION_ERROR(-20009, 'No existing evaluation found for this project by the specified supervisor. Please use the evaluate_project procedure to create a new evaluation.');
+        WHEN evaluation_integrity_error THEN
+            RAISE_APPLICATION_ERROR(-20012, 'Data integrity error: Multiple evaluations found for the same project by the same supervisor.');
     END remark_project;
 
     PROCEDURE view_project_ready_for_evaluation(subject IN VARCHAR2) IS
