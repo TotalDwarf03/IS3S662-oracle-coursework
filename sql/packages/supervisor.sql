@@ -15,7 +15,6 @@ CREATE OR REPLACE PACKAGE BODY supervisor AS -- noqa: PRS
     -- Rolls back if insertion fails
     PROCEDURE evaluate_project(project_id IN NUMBER, mark IN NUMBER, supervisor_id IN NUMBER, comments IN VARCHAR2) IS
         next_evaluation_id NUMBER;
-        project projects%ROWTYPE;
         CURSOR supervisor_cursor IS
             SELECT SupervisorID, Fullname FROM supervisors WHERE SupervisorID = supervisor_id;
         supervisor supervisor_cursor%ROWTYPE;
