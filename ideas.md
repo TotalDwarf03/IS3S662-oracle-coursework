@@ -1,5 +1,9 @@
 # Ideas for SQL Packages
 
+This is a brainstorming document for ideas on SQL packages, triggers, views and indexes to create for the coursework.
+Everything here is just ideas and suggestions. I may not implement all of these, and I may come up with new ideas as I go along.
+The stuff here should be taken with a pinch of salt.
+
 ## Contents
 
 - [Ideas for SQL Packages](#ideas-for-sql-packages)
@@ -88,6 +92,10 @@ Additionally, I can create Views and Indexes as smaller separate components / it
   - This could use OOP here to make a notification object with methods to mark as read, get details, etc.
 
 #### Package 2 - Student Package
+
+*This never got implemented since it duplicates a lot of functionality from the Supervisor Package.*
+*It's annoying since I haven't shown all of the notification logic for students which I laid foundations for in the trigger idea below.*
+*But I really don't want to duplicate code just for the sake of it.*
 
 - Procedure to get projects by status for a student
 - Procedure to get project and performance summary (i.e. Average mark, grade, number of projects passed/failed, number of projects pending)

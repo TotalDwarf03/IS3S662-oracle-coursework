@@ -13,11 +13,11 @@ Oracle PL/SQL coursework for Advanced Databases and Modelling (IS3S662) at the U
   - [Prerequisites](#prerequisites)
   - [Running the Oracle Database Container](#running-the-oracle-database-container)
   - [Connecting to the Database](#connecting-to-the-database)
-  - [Setting Up the Database](#setting-up-the-database)
-    - [Creating a Non-root User](#creating-a-non-root-user)
-    - [Provisioning the Tables](#provisioning-the-tables)
-    - [Inserting Sample Data](#inserting-sample-data)
-    - [Queries and Packages](#queries-and-packages)
+  - [Creating a Non-root User](#creating-a-non-root-user)
+  - [Provisioning Database Content](#provisioning-database-content)
+    - [File Organisation](#file-organisation)
+    - [Provisioning Order](#provisioning-order)
+    - [Additional Scripts](#additional-scripts)
   - [Stopping, Restarting and Removing the Container](#stopping-restarting-and-removing-the-container)
   - [Linting and Formatting](#linting-and-formatting)
     - [SQLFluff](#sqlfluff)
@@ -123,9 +123,7 @@ See the below screenshot for reference:
 
 Once connected, you can run SQL and PL/SQL code against the Oracle database.
 
-## Setting Up the Database
-
-### Creating a Non-root User
+## Creating a Non-root User
 
 After connecting to the database for the first time, you will need to create a new user/schema for the coursework.
 
@@ -154,41 +152,61 @@ Service Name: FREEPDB1
 
 This user should now be used for all further development work on the coursework.
 
-### Provisioning the Tables
+## Provisioning Database Content
 
-All table definitions are provided in the `sql/tables` directory.
+### File Organisation
 
-Simply run each of the SQL scripts in that directory while connected as the `appuser` user to create the necessary tables for the coursework.
+The `sql` directory contains all the SQL scripts needed to set up the database schema, insert sample data, and implement the required PL/SQL packages.
 
-This should be done in the following order to satisfy foreign key constraints:
+The directory uses the following structure:
 
-1. `students.sql`
-2. `supervisors.sql`
-3. `projects.sql`
-4. `evaluations.sql`
+```bash
+sql/
+├── indexes/                # Index creation scripts
+├── misc/                   # Miscellaneous scripts
+├── objects/                # Custom Object Types
+├── packages/               # PL/SQL package scripts
+├── sample-data/            # Sample data insertion scripts
+├── tables/                 # Table creation scripts
+├── tests/                  # Test scripts for packages
+├── triggers/               # Trigger creation scripts
+├── user-setup/             # User creation scripts
+└── views/                  # View creation scripts
+```
 
-### Inserting Sample Data
+### Provisioning Order
 
-Sample data insertion scripts are provided in the `sql/sample-data` directory.
+The database must be provisioned in the following order to ensure all dependencies are met.
 
-Run each of the SQL scripts in that directory while connected as the `appuser` user to populate the tables with sample data.
+**Note:** This does not include the user creation step, which should be done first as described above.
 
-This should be done in the following order to satisfy foreign key constraints:
+1. Create Tables: Run all scripts in the `sql/tables` directory to create the necessary tables.
+   1. `students.sql`
+   2. `supervisors.sql`
+   3. `projects.sql`
+   4. `evaluations.sql`
+   5. `notifications.sql`
+2. Create Indexes: Run all scripts in the `sql/indexes` directory to create indexes on the tables.
+3. Create Object Types: Run all scripts in the `sql/objects` directory to create any custom object types.
+4. Create Views: Run all scripts in the `sql/views` directory to create any necessary
+5. Create Triggers: Run all scripts in the `sql/triggers` directory to create any necessary triggers.
+6. Create Packages: Run all scripts in the `sql/packages` directory to create the PL/SQL packages.
+7. Insert Sample Data: Run all scripts in the `sql/sample-data` directory to insert sample data into the tables.
+   1. `students.sql`
+   2. `supervisors.sql`
+   3. `projects.sql`
+   4. `evaluations.sql`
 
-1. `students.sql`
-2. `supervisors.sql`
-3. `projects.sql`
-4. `evaluations.sql`
+### Additional Scripts
 
-Should these tables need to be reset/dropped, a script is provided in `sql/tables/delete-tables.sql` to drop all tables in the correct order.
+Some additional scripts are provided across the various directories for miscellaneous tasks, such as cleaning up the database or running tests.
 
-### Queries and Packages
-
-The additional functionality the coursework requires can be implemented in the `sql/packages` directory.
-
-Within the directory, you will find 3 separate subdirectories containing SQL scripts for each PL/SQL package, procedure, function or trigger that you need to implement, alongside a `README.md` file with information about the package.
-
-[Explore the `sql/packages` directory for more details.](./sql/packages)
+- `/misc/check-version.sql`: Check the Oracle database version.
+- `/tables/delete-tables.sql`: Drop all tables in the schema. This is useful for resetting the database.
+- `/tests/`: These scripts are used to test the functionality of the different SQL assets.
+  - `test-trigger.sql`: Test scripts for triggers.
+  - `test-supervisor.sql`: Test scripts for the supervisor package.
+- `/user-setup/user.sql`: Create the non-root user/schema for development.
 
 ## Stopping, Restarting and Removing the Container
 
