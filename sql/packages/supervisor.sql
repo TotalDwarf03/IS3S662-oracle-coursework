@@ -299,6 +299,9 @@ CREATE OR REPLACE PACKAGE BODY supervisor AS -- noqa: PRS
             RAISE_APPLICATION_ERROR(-20012, 'Data integrity error: Multiple evaluations found for the same project by the same supervisor.');
     END remark_project;
 
+    -- Procedure to view projects ready for evaluation
+    -- Fetches projects that are completed but not yet evaluated for the given subject
+    -- Outputs project details to DBMS_OUTPUT
     PROCEDURE view_project_ready_for_evaluation(subject IN VARCHAR2) IS
     CURSOR project_cursor IS
         SELECT p.ProjectID, p.StudentID, p.Title, p.Status
@@ -383,7 +386,6 @@ CREATE OR REPLACE PACKAGE BODY supervisor AS -- noqa: PRS
     -- Each notification is marked as read after being processed
     -- Notifications are instances of NotificationObj
     -- Notifications are output to DBMS_OUTPUT
-
     PROCEDURE get_supervisor_notifications(supervisor_id IN NUMBER) IS
     supervisor_name supervisors.Fullname%TYPE := NULL;
 
