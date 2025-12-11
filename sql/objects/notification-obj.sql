@@ -24,6 +24,7 @@ CREATE OR REPLACE TYPE BODY NOTIFICATIONOBJ AS
         END IF;
 
         DBMS_OUTPUT.PUT_LINE('Notification ' || SELF.NOTIFICATIONID || ' marked as read.');
+        COMMIT;
     END MARK_AS_READ;
 END;
 /
