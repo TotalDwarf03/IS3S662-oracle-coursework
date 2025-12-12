@@ -14,6 +14,9 @@ The stuff here should be taken with a pinch of salt.
       - [Package 1 - Supervisor Package](#package-1---supervisor-package)
       - [Package 2 - Student Package](#package-2---student-package)
       - [Trigger - Email Notification Trigger](#trigger---email-notification-trigger)
+      - [Supervisor Testing Package](#supervisor-testing-package)
+        - [Testing Facilities to Implement](#testing-facilities-to-implement)
+        - [Tests to Implement](#tests-to-implement)
     - [Additional Items](#additional-items)
       - [View - Extended Project Information View](#view---extended-project-information-view)
       - [Indexes](#indexes)
@@ -140,6 +143,61 @@ For example
 | fs   | Project Failed     | Unfortunately, you have not passed...  | Student  |
 | rs   | Project Remarked   | Your project has been remarked...      | Student  |
 | rc   | Evaluation Receipt | An evaluation has been recorded...     | Staff    |
+
+#### Supervisor Testing Package
+
+This package will contain procedures and functions to test the functionality of the Supervisor Package.
+This will include test cases for the various procedures and functions in the Supervisor Package to ensure they work as expected (unit tests).
+
+On GitHub, I managed to find a similar project that implements a testing framework for PL/SQL called [utPLSQL](https://github.com/utPLSQL/utPLSQL). With my testing package, I will look to implement similar functionality but on a smaller scale and specifically tailored to my needs.
+
+To ensure that I can unit test my existing code (without refactoring), I did a quick PoC (`./sql/misc/proof-of-concept-testing.sql`). This shows that I can collect outputs from my procedures/functions (i.e. DBMS_OUTPUT and Error Raises) and capture them in my testing package to verify against expected outputs.
+
+##### Testing Facilities to Implement
+
+- Function to assert a certain error is raised when expected.
+  - This should collect the raised error and use `ERRMSG` to verify against expected error message.
+- Function to assert expected output from DBMS_OUTPUT.
+  - This should capture DBMS_OUTPUT and verify against expected output.
+- Function to assert 2 values are equal.
+  - This will be useful when checking return values from functions, and verifying that records are inserted correctly (i.e. assert that the number of records in a table matches the expected count).
+
+##### Tests to Implement
+
+The tests in `./sql/tests/test-supervisor.sql` will make use of the above testing facilities to implement unit tests for the Supervisor Package.
+
+Each test case should be its own procedure, and should cover a specific functionality of the Supervisor Package.
+
+A parent procedure will then be needed to call each test case in turn for a specific component in the package.
+
+Additionally, a master procedure will be needed to call all the parent procedures for each component in the package to run all tests in one go.
+
+I will need to think about how to consistently structure the tests so their reporting is clear and easy to understand. Could I use OOP for this?
+
+For example, I could create a TestCase object with properties like name, description, expected output, actual output, status (pass/fail), etc.
+
+Then give it methods to compare expected and actual outputs, and to print a summary of the test case.
+
+```json
+TestCase {
+  name: "Test Mark Project with Valid Data",
+  description: "Tests marking a project with valid data",
+  expectedOutput: "Project marked successfully",
+  actualOutput: "",
+  status: "Not Run",
+  
+  methods: {
+    runTest(), // Runs the test case (compares expected and actual outputs)
+    printSummary()
+  }
+}
+```
+
+This TestCase object would be populated with data for each test case, and then the runTest method would be called to execute the test and compare outputs.
+
+This could replace the parent, master procedure structure mentioned earlier, making the testing framework more modular and easier to extend in the future.
+
+Have a master to run all tests. Have child procedures to define the test cases and run them.
 
 ### Additional Items
 
