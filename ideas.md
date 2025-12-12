@@ -40,7 +40,7 @@ Across the 3 items, the following Oracle features should be used:
   - [x] Basic LOOP
   - [x] FOR LOOP
   - [x] WHILE LOOP
-  - [ ] Nested Loops
+  - [x] Nested Loops
 - [x] String operations (maybe)
 - [x] Arrays
 - [x] Procedures
@@ -99,6 +99,8 @@ Additionally, I can create Views and Indexes as smaller separate components / it
 *This never got implemented since it duplicates a lot of functionality from the Supervisor Package.*
 *It's annoying since I haven't shown all of the notification logic for students which I laid foundations for in the trigger idea below.*
 *But I really don't want to duplicate code just for the sake of it.*
+
+**This functionality has been replace by the testing suite for the Supervisor Package.**
 
 - Procedure to get projects by status for a student
 - Procedure to get project and performance summary (i.e. Average mark, grade, number of projects passed/failed, number of projects pending)
