@@ -10,6 +10,7 @@ Oracle PL/SQL coursework for Advanced Databases and Modelling (IS3S662) at the U
     - [Assessment Description](#assessment-description)
     - [Implementation Requirements](#implementation-requirements)
     - [Database Setup Scripts](#database-setup-scripts)
+  - [Documentation](#documentation)
   - [Prerequisites](#prerequisites)
   - [Running the Oracle Database Container](#running-the-oracle-database-container)
   - [Connecting to the Database](#connecting-to-the-database)
@@ -75,6 +76,15 @@ The given database schema is available in the `sql/tables` directory.
 This will create 4 tables: Students, Supervisors, Projects, and Evaluations.
 
 ![Entity Relationship Diagram](./assets/entity-relationship-diagram.drawio.png)
+
+## Documentation
+
+Additional documentation for the coursework is available in the `docs` directory.
+
+This includes:
+
+- `ideas.md`: Brainstorming and ideas for PL/SQL constructs and features. This is a rough and ready document to help with planning and a place to dump my brain on paper.
+- `features.md`: A document outlining the different features implemented in the coursework, along with a list and examples of where different PL/SQL constructs are used.
 
 ## Prerequisites
 
