@@ -201,6 +201,8 @@ This could replace the parent, master procedure structure mentioned earlier, mak
 
 Have a master to run all tests. Have child procedures to define the test cases and run them.
 
+![Testing Package Structure](./assets/test-case-structure.drawio.png)
+
 ### Additional Items
 
 #### View - Extended Project Information View
